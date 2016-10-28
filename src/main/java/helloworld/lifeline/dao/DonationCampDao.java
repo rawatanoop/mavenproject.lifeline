@@ -73,23 +73,10 @@ public class DonationCampDao /* implements IDonationCampDao<DonationCamp> */ {
 	@SuppressWarnings("unchecked")
 	@Transactional
 	public List<DonationCamp> getByAddressCategory(String address, int category) {
-
 		Query query = getSession().createQuery("from DonationCamp where address=:address and campCategoryID=:category");
 		query.setParameter("address", address);
 		query.setParameter("category", category);
 		return query.list();
-		// int amnt = Integer.parseInt(query1.list().get(0).toString());
-		// Query query = getSession()
-		// .createQuery("from Bid where item.id=:itemId and bid_time<:endTime
-		// and bidAmount= :bidAmt");
-		// query.setParameter("itemId", itemId);
-		// query.setParameter("endTime", item.getEndTime());
-		// query.setParameter("bidAmt", amnt);
-		// Bid b = (Bid) query.list().get(0);
-		// System.out.println("list");
-		// System.out.println("Bid Id" + b.getId() + "User" +
-		// b.getUser().getName());
-		// System.out.println("list");
 
 	}
 

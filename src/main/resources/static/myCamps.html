@@ -30,7 +30,7 @@
   <script>
 $(document).ready(function(){
   
-      $.get("/donationCamp/user" ,function(data, status){
+      $.get("donationCamp/user" ,function(data, status){
       $.each(data, function (i, item) {
 
       var queue = '<div class="col-sm-4">';
@@ -53,7 +53,7 @@ $(document).ready(function(){
     
     $('#donationCamps').append(queue); 
 
-    $.get("/donationCamp/volunteer" ,{campID:data[i].id  ,requestStatus:"Request"},function(data, status){
+    $.get("donationCamp/volunteer" ,{campID:data[i].id  ,requestStatus:"Request"},function(data, status){
       $.each(data, function (i, item) { 
 
         var row = '<tr>';
@@ -72,7 +72,7 @@ $(document).ready(function(){
             var campID =data[i].campID;
             var unitDonate=data[i].unitDonate;
                                   $.ajax({
-                                      url : '/volunteer/update',
+                                      url : 'volunteer/update',
                                       type : 'POST',
                                       contentType : 'application/json',
                                       data : JSON.stringify({
@@ -92,7 +92,7 @@ $(document).ready(function(){
             var campID =data[i].campID;
             var unitDonate=data[i].unitDonate;
               $.ajax({
-                                      url : '/volunteer/update',
+                                      url : 'volunteer/update',
                                       type : 'POST',
                                       contentType : 'application/json',
                                       data : JSON.stringify({
@@ -153,7 +153,7 @@ $(document).ready(function(){
         <li class="active"><a href="myCamps.html">My Camps</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/logout"><span class="glyphicon glyphicon glyphicon-log-out"></span> Log-out </a></li>
+        <li><a href="logout"><span class="glyphicon glyphicon glyphicon-log-out"></span> Log-out </a></li>
       </ul>
     </div>
   </div>

@@ -30,7 +30,7 @@
   <script>
 $(document).ready(function(){
   $('#searchButton').click(function(){
-      $.get("/search", 'address='+$('#addressSelector').val() ,function(data, status){
+      $.get("search", 'address='+$('#addressSelector').val() ,function(data, status){
       $.each(data, function (i, item) {
     // alert("Data: "+item.id+ " \nStatus: " + status);
      tr = $('<tr/>');
@@ -51,7 +51,7 @@ $(document).ready(function(){
         click: function() { 
 
           $.ajax({
-url : '/volunteer/save',
+url : 'volunteer/save',
 type : 'POST',
 contentType : 'application/json',
 data : JSON.stringify({
@@ -84,7 +84,7 @@ dataType : 'json'
 
 $(document).ready(function(){
     var id  = 1;
-      $.get("/volunteer/"+id+"/acceptedRequest" ,function(data, status){
+      $.get("volunteer/"+id+"/acceptedRequest" ,function(data, status){
       $.each(data, function (i, item) {
     // alert("Data: "+item.id+ " \nStatus: " + status);
 
@@ -102,7 +102,7 @@ $(document).ready(function(){
         $('#acceptedTable').append(tr);  
 });     });      
 
-$.get("/volunteer/"+id+"/pendingRequest" ,function(data, status){
+$.get("volunteer/"+id+"/pendingRequest" ,function(data, status){
       $.each(data, function (i, item) {
     // alert("Data: "+item.id+ " \nStatus: " + status);
 
@@ -152,7 +152,7 @@ $.get("/volunteer/"+id+"/pendingRequest" ,function(data, status){
         <li ><a href="myCamps.html">My Camps</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/logout"><span class="glyphicon glyphicon glyphicon-log-out"></span> Log-out </a></li>
+        <li><a href="logout"><span class="glyphicon glyphicon glyphicon-log-out"></span> Log-out </a></li>
       </ul>
     </div>
   </div>

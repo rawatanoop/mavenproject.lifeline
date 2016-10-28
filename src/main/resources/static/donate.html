@@ -32,7 +32,7 @@
 $(document).ready(function(){
 
     
-      $.get("/category/all" ,function(data, status){
+      $.get("category/all" ,function(data, status){
         tr = "<option value="+0+"> All </option>";
         $('#categorySelector').append(tr);
       $.each(data, function (i, item) {
@@ -49,7 +49,7 @@ $(document).ready(function(){
       
 
  $('#searchButton').click(function(){
-$.get( "/search/filter", { address: $('#addressSelector').val(), category: $('#categorySelector').val() } )
+$.get( "search/filter", { address: $('#addressSelector').val(), category: $('#categorySelector').val() } )
   .done(function( data ) {
     $("#donationCampTable tr").remove();
       $.each(data, function (i, item) {
@@ -75,7 +75,7 @@ $.get( "/search/filter", { address: $('#addressSelector').val(), category: $('#c
         click: function() { 
 
           $.ajax({
-url : '/volunteer/save',
+url : 'volunteer/save',
 type : 'POST',
 contentType : 'application/json',
 data : JSON.stringify({
@@ -130,7 +130,7 @@ dataType : 'json'
         <li ><a href="myCamps.html">My Camps</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/logout"><span class="glyphicon glyphicon glyphicon-log-out"></span> Log-out </a></li>
+        <li><a href="logout"><span class="glyphicon glyphicon glyphicon-log-out"></span> Log-out </a></li>
       </ul>
     </div>
   </div>

@@ -14,7 +14,7 @@
     $(document).ready(function(){
   $('#createCamp').click(function(){
     $.ajax({
-url : '/donationCamp/save',
+url : 'donationCamp/save',
 type : 'POST',
 contentType : 'application/json',
 data : JSON.stringify({
@@ -36,7 +36,7 @@ data : JSON.stringify({
     $(document).ready(function(){
 
     
-      $.get("/category/all" ,function(data, status){
+      $.get("category/all" ,function(data, status){
         tr = "<option value="+0+"> All </option>";
       $.each(data, function (i, item) {
         tr = "<option value="+data[i].id+">"+ data[i].category+" , "+data[i].subCategory+ " </option>";
@@ -93,7 +93,7 @@ data : JSON.stringify({
         <li><a href="myCamps.html">My Camps</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/logout"><span class="glyphicon glyphicon glyphicon-log-out"></span> Log-out </a></li>
+        <li><a href="logout"><span class="glyphicon glyphicon glyphicon-log-out"></span> Log-out </a></li>
       </ul>
     </div>
   </div>

@@ -20,7 +20,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script><script>
 $(document).ready(function(){
   $("button").click(function(){
-      $.get("/donationCamp/all", function(data, status){
+      $.get("donationCamp/all", function(data, status){
       $.each(data, function (i, item) {
     // alert("Data: "+item.id+ " \nStatus: " + status);
      tr = $('<tr/>');

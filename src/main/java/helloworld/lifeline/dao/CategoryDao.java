@@ -24,7 +24,6 @@ public class CategoryDao implements ICategoryDao<DonationCampCategory> {
 	@Override
 	@Transactional
 	public Serializable save(DonationCampCategory category) {
-
 		return getSession().save(category);
 	}
 
