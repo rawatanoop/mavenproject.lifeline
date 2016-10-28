@@ -1,4 +1,4 @@
-laguage:java
+language:java
 
-script:
-mvn clean
+jdk:
+  - oraclejdk8
